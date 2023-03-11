@@ -18,6 +18,10 @@ header {
     margin: 2rem;
 }
 
+.profile {
+    position: relative;
+}
+
 .header-container {
     justify-content: space-between;
     width: 44rem;
@@ -37,11 +41,11 @@ header {
     height: 10.4rem;
 }
 
-.like:hover {
+.button-like:hover {
     background-color: #DBFFF4;
 }
 
-.swipe:hover {
+.button-swipe:hover {
     background-color: #FFE7EF;
 }
 
@@ -69,13 +73,24 @@ header,
     align-items: center;
 }
 
-.swipe,
-.like {
+.button-swipe,
+.button-like {
     margin: 0 1.5rem;
     width: 9.1rem;
     height: 9.1rem;
     border-radius: 50%;
     border: none;
     background-color: white;
+}
+
+.badge-like,
+.badge-nope {
+    width: 22rem;
+    height: 10.6rem;
+    position: absolute;
+    transform: rotate(-30deg);
+    left: 9rem;
+    top: 5.5rem;
+    display: none;
 }
 
