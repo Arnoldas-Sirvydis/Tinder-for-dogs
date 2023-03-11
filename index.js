@@ -1,4 +1,5 @@
 import {dogs} from "./data.js"
+import {getRandomNumber} from "./utils.js"
 
 class Dog {
     constructor(data) {
