@@ -6,8 +6,12 @@ html {
     font-size: 62.5%;
 }
 
-body {
+body,
+html {
     margin: 0;
+    background-image: linear-gradient(#FFFFFF, #F6F7FB);
+    height: 100%;
+    overflow: hidden;
 }
 
 header {
@@ -23,8 +27,55 @@ header {
     width: 7.5rem;
 }
 
+.profile-pic {
+    height: 65rem;
+    width: 46rem;
+    border-radius: 1.2rem;
+}
+
+.buttons {
+    height: 10.4rem;
+}
+
+.like:hover {
+    background-color: #DBFFF4;
+}
+
+.swipe:hover {
+    background-color: #FFE7EF;
+}
+
 .icon-profile,
 .icon-chat {
     width: 3.2rem;
     height: 3.4rem;
 }
+
+header,
+.header-container,
+.profile,
+.buttons {
+    display: flex;
+}
+
+header,
+.profile,
+.buttons {
+    justify-content: center;
+}
+
+.header-container,
+.buttons {
+    align-items: center;
+}
+
+.swipe,
+.like {
+    margin: 0 1.5rem;
+    width: 9.1rem;
+    height: 9.1rem;
+    border-radius: 50%;
+    border: none;
+    background-color: white;
+}
+
