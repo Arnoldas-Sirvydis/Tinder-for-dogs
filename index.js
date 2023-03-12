@@ -1,9 +1,9 @@
 import {dogs} from "./data.js"
-import {getRandomDog} from "./utils.js"
+import {getRandomNumber} from "./utils.js"
 import {Dog} from "./classes.js"
 
 
-const dog = new Dog(getRandomDog())
+const dog = new Dog(dogs[getRandomNumber()])
 
 function getDogHtml(dog) {
     return `
@@ -34,3 +34,5 @@ document.getElementById("button-like").addEventListener("click", likeDog())
 
 render()
 
+//<img class="badge-like" src="images/badge-like.png" alt="badge-like">
+//<img class="badge-nope" src="images/badge-nope.png" alt="badge-nope">
