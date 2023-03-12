@@ -18,10 +18,6 @@ header {
     margin: 2rem;
 }
 
-.profile {
-    position: relative;
-}
-
 .header-container {
     justify-content: space-between;
     width: 44rem;
@@ -35,6 +31,24 @@ header {
     height: 65rem;
     width: 46rem;
     border-radius: 1.2rem;
+}
+
+.dog-name-age {
+    position: absolute;
+    left: 1.5rem;
+    bottom: 1.5rem;
+    color: #F8F8F8;
+    font-size: 3.2rem;
+}
+
+.bio {
+    color: #B7B7B7;
+    font-size: 2.4rem;
+    display: block;
+}
+
+.container {
+    position: relative;
 }
 
 .buttons {
@@ -93,4 +107,3 @@ header,
     top: 5.5rem;
     display: none;
 }
-
