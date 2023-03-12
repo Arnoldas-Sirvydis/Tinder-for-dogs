@@ -3,8 +3,6 @@ import {getRandomDog} from "./utils.js"
 import {Dog} from "./classes.js"
 
 
-
-
 const dog = new Dog(getRandomDog())
 
 function getDogHtml(dog) {
@@ -20,12 +18,19 @@ function render() {
     document.getElementById("profile").innerHTML += getDogHtml(dog)
 }
 
-document.getElementById("button-swipe").addEventListener("click", () => {
-    dog.hasBeenSwiped = true
-})
-document.getElementById("button-like").addEventListener("click", () => {
-    dog.hasBeenLiked = true
-})
+function swipeDog() {
+    const index = dogs.findIndex(d => d.name === dog.name) 
+    dogs[index].hasBeenSwiped = true 
+}
+
+function likeDog() {
+    const index = dogs.findIndex(d => d.name === dog.name) 
+    dogs[index].hasBeenLiked = true 
+}
+
+
+document.getElementById("button-swipe").addEventListener("click", swipeDog())
+document.getElementById("button-like").addEventListener("click", likeDog())
 
 render()
 
