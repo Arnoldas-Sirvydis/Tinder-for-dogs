@@ -20,5 +20,12 @@ function render() {
     document.getElementById("profile").innerHTML += getDogHtml(dog)
 }
 
+document.getElementById("button-swipe").addEventListener("click", () => {
+    dog.hasBeenSwiped = true
+})
+document.getElementById("button-like").addEventListener("click", () => {
+    dog.hasBeenLiked = true
+})
+
 render()
 
