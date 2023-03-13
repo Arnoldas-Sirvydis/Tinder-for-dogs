@@ -18,14 +18,17 @@ function render() {
     document.getElementById("profile").innerHTML += getDogHtml(dog)
 }
 
+//finds a matching dog in dogs array
+function findDogMatch() {
+    return dogs.findIndex(d => d.name === dog.name) 
+}
+
 function swipeDog() {
-    const index = dogs.findIndex(d => d.name === dog.name) 
-    dogs[index].hasBeenSwiped = true 
+    dogs[findDogMatch()].hasBeenSwiped = true 
 }
 
 function likeDog() {
-    const index = dogs.findIndex(d => d.name === dog.name) 
-    dogs[index].hasBeenLiked = true 
+    dogs[findDogMatch()].hasBeenLiked = true 
 }
 
 
