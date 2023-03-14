@@ -2,8 +2,17 @@ import {dogs} from "./data.js"
 import {getRandomNumber} from "./utils.js"
 import {Dog} from "./classes.js"
 
+function getNextDog() {
+    for(let dog of dogs) {
+        if(!dog.hasBeenSwiped && !dog.hasBeenLiked) {
+            return dog
+        }
+    }
+    return null
+}
 
-const dog = new Dog(dogs[getRandomNumber()])
+
+const dog = getNextDog() ? new Dog(getNextDog()) : null
 
 function getDogHtml(dog) {
     return `
@@ -15,25 +24,28 @@ function getDogHtml(dog) {
 }
 
 function render() {
-    document.getElementById("profile").innerHTML += getDogHtml(dog)
+    if (dog !== null && dog !== undefined) { 
+      document.getElementById("profile").innerHTML += getDogHtml(dog);
+    }
 }
+
 
 //finds a matching dog in dogs array
 function findDogMatch() {
     return dogs.findIndex(d => d.name === dog.name) 
 }
 
-function swipeDog() {
-    dogs[findDogMatch()].hasBeenSwiped = true 
+function swipeDog(dog) {
+    dogs[findDogMatch(dog)].hasBeenSwiped = true 
 }
 
-function likeDog() {
-    dogs[findDogMatch()].hasBeenLiked = true 
+function likeDog(dog) {
+    dogs[findDogMatch(dog)].hasBeenLiked = true 
 }
 
 
-document.getElementById("button-swipe").addEventListener("click", swipeDog())
-document.getElementById("button-like").addEventListener("click", likeDog())
+document.getElementById("button-swipe").addEventListener("click", () => swipeDog(dog))
+document.getElementById("button-like").addEventListener("click", () => likeDog(dog))
 
 render()
 

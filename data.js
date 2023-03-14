@@ -4,7 +4,7 @@ export const dogs = [
         avatar: "images/dog-rex.jpg",
         age: 25,
         bio: "Art. Literature. Natural wine. Yoga.",
-        hasBeenSwiped: false,
+        hasBeenSwiped: true,
         hasBeenLiked: false
     },{
         name: "Bella",
@@ -12,14 +12,14 @@ export const dogs = [
         age: 43,
         bio: "Yup, that's my owner. U can meet him if you want",
         hasBeenSwiped: false,
-        hasBeenLiked: false
+        hasBeenLiked: true
     },
     {
         name: "Teddy",
         avatar: "images/dog-teddy.jpg",
         age: 30,
         bio: "How you doin?",
-        hasBeenSwiped: false,
+        hasBeenSwiped: true,
         hasBeenLiked: false
     }
 ]
