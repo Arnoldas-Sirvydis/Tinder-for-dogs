@@ -51,10 +51,12 @@ function findDogMatch() {
 
 function swipeDog(dog) {
     dogs[findDogMatch(dog)].hasBeenSwiped = true
+    document.querySelector(".badge-nope").style.display = "block"
 }
 
 function likeDog(dog) {
     dogs[findDogMatch(dog)].hasBeenLiked = true
+    document.querySelector(".badge-like").style.display = "block"
 }   
 
 
