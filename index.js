@@ -2,6 +2,8 @@ import {dogs} from "./data.js"
 import {getRandomNumber} from "./utils.js"
 import {Dog} from "./classes.js"
 
+let profileHtml = document.getElementById("profile")
+
 function getNextDog() {
     for(let dog of dogs) {
         if(!dog.hasBeenSwiped && !dog.hasBeenLiked) {
@@ -19,14 +21,26 @@ function getDogHtml(dog) {
     <div class="container">
         <img class="profile-pic" src="${dog.avatar}" alt="dog-picture">
         <div class="dog-name-age">${dog.name}, ${dog.age}<span class="bio">${dog.bio}</span></div>
+        <img class="badge-nope" src="images/badge-nope.png" alt="badge-nope">
+        <img class="badge-like" src="images/badge-like.png" alt="badge-like">
     </div>
     `
 }
 
 function render() {
     if (dog !== null && dog !== undefined) { 
-      document.getElementById("profile").innerHTML += getDogHtml(dog);
+        profileHtml.innerHTML = getDogHtml(dog);
+    } else {
+        profileHtml.innerHTML = noMoreDogsHtml()
     }
+}
+
+function noMoreDogsHtml() {
+    return`
+    <div class="container">
+        <img class="profile-pic" src="images/dog-house.jpg" alt="dog-picture">
+    </div>
+    `
 }
 
 
@@ -36,12 +50,12 @@ function findDogMatch() {
 }
 
 function swipeDog(dog) {
-    dogs[findDogMatch(dog)].hasBeenSwiped = true 
+    dogs[findDogMatch(dog)].hasBeenSwiped = true
 }
 
 function likeDog(dog) {
-    dogs[findDogMatch(dog)].hasBeenLiked = true 
-}
+    dogs[findDogMatch(dog)].hasBeenLiked = true
+}   
 
 
 document.getElementById("button-swipe").addEventListener("click", () => swipeDog(dog))
@@ -49,5 +63,6 @@ document.getElementById("button-like").addEventListener("click", () => likeDog(d
 
 render()
 
-//<img class="badge-like" src="images/badge-like.png" alt="badge-like">
-//<img class="badge-nope" src="images/badge-nope.png" alt="badge-nope">
+
+
+

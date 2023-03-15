@@ -55,6 +55,14 @@ header {
     height: 10.4rem;
 }
 
+.badge-like {
+    display: none;
+}
+
+.badge-nope {
+    display: none;
+}
+
 .button-like:hover {
     background-color: #DBFFF4;
 }
@@ -103,7 +111,6 @@ header,
     height: 10.6rem;
     position: absolute;
     transform: rotate(-30deg);
-    left: 9rem;
+    left: 2rem;
     top: 5.5rem;
-    display: none;
 }
