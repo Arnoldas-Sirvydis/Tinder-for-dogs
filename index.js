@@ -1,5 +1,4 @@
 import {dogs} from "./data.js"
-import {getRandomNumber} from "./utils.js"
 import {Dog} from "./classes.js"
 
 let profileHtml = document.getElementById("profile")
@@ -26,6 +25,7 @@ function getDogHtml(dog) {
     </div>
     `
 }
+
 
 function render() {
     if (dog !== null && dog !== undefined) { 

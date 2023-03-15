@@ -110,7 +110,25 @@ header,
     width: 22rem;
     height: 10.6rem;
     position: absolute;
-    transform: rotate(-30deg);
+    transform: rotate(-30deg) translateY(-100%) scale(2);
     left: 2rem;
     top: 5.5rem;
+    opacity: 0;
+    animation: stampBadge 1s forwards;
 }
+
+@keyframes stampBadge {
+    0% {
+        transform: rotate(-30deg) translateY(-100%) scale(2);
+        opacity: 0;
+    }
+    50% {
+        transform: rotate(-30deg) translateY(0%) scale(0.9);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(-30deg) translateY(0%) scale(1);
+        opacity: 1;
+    }
+}
+
